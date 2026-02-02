@@ -2,7 +2,10 @@ return {
   {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.8",
-    dependencies = { "nvim-lua/plenary.nvim" },
+    dependencies = { 
+      "nvim-lua/plenary.nvim",
+      "rafi/telescope-thesaurus.nvim",
+    },
     opts = {
       defaults = {
         mappings = {
@@ -26,9 +29,16 @@ return {
           previewer = false,
         },
       },
+      extensions = {
+        thesaurus = {
+          provider = 'datamuse', -- uses datamuse.com API
+        },
+      },
     },
     config = function(_, opts)
-      require("telescope").setup(opts)
+      local telescope = require("telescope")
+      telescope.setup(opts)
+      pcall(telescope.load_extension, "thesaurus")
     end,
   },
 }

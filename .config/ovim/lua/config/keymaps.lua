@@ -22,3 +22,11 @@ map("n", "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "Toggle Explorer" })
 map('n', '<leader>ff', "<cmd>Telescope find_files<cr>", { desc = "Find Files" })
 map('n', '<leader>fg', "<cmd>Telescope live_grep<cr>", { desc = "Live Grep (Search Text)" })
 map('n', '<leader>fb', "<cmd>Telescope buffers<cr>", { desc = "Find Buffer" })
+
+-- Thesaurus
+map('n', '<leader>t', "<cmd>Telescope thesaurus lookup<cr>", { desc = "Thesaurus Lookup" })
+
+-- LSP / Grammar
+map('n', '<leader>ca', vim.lsp.buf.code_action, { desc = "Code Action (Fix Grammar)" })
+map('n', 'gd', vim.lsp.buf.definition, { desc = "Go to Definition" })
+map('n', 'K', vim.lsp.buf.hover, { desc = "Hover Info" })
