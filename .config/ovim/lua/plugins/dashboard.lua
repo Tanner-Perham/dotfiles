@@ -22,6 +22,7 @@ return {
       -- Buttons for common actions
       dashboard.section.buttons.val = {
         dashboard.button("n", "  New File", "<cmd>ene <BAR> startinsert <CR>"),
+        dashboard.button("r", "  Restore Session", [[<cmd> lua require("persistence").load() <cr>]]),
         dashboard.button("<space> f f", "  Find File", "<cmd>Telescope find_files<cr>"),
         dashboard.button("<space> f g", "  Find Text", "<cmd>Telescope live_grep<cr>"),
         dashboard.button("<space> e", "  Explorer", "<cmd>Neotree toggle<cr>"),
